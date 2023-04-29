@@ -72,19 +72,19 @@ class login{
                     if ($hash == $row['password'] && $row['role'] == 1) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FIND/superadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/superadmin"));
                         exit;
 
                     }else if ($hash == $row['password'] && $row['role'] == 2) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FIND/admin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/admin"));
                         exit;
                         
                     }else if ($hash == $row['password'] && $row['role'] == 3) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FIND/subadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/subadmin"));
                         exit;
                         
                     }else if ($hash == $row['password'] && $row['role'] == 4) {
@@ -134,19 +134,19 @@ class login{
                     if ($row['role'] == 1) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FIND/superadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/superadmin"));
                         exit;
 
                     }else if ($row['role'] == 2) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FIND/admin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/admin"));
                         exit;
                         
                     }else if ($row['role'] == 3) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FIND/subadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/subadmin"));
                         exit;
                         
                     }else if ($row['role'] == 4) {

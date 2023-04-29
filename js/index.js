@@ -1,41 +1,42 @@
+// $(document).ready(function() {
+
+//     $('#continue').click(function() {
+//         const form = new FormData();
+//         form.append("action", "login");
+//         form.append("email", $('#userid').val());
+        
+//         const settings = {
+//           "async": true,
+//           "crossDomain": true,
+//           "url": "API/manager.php",
+//           "method": "POST",
+//           "headers": {},
+//           "processData": false,
+//           "contentType": false,
+//           "mimeType": "multipart/form-data",
+//           "data": form
+//         };
+        
+//         $.ajax(settings).done(function (response) {
+//             console.log(response)
+//             if(JSON.parse(response).status){
+//                 $('#password_div').css('display', 'block').siblings('#continue_div, #login_div').css('display', 'block');
+//                 $('#continue_div').css('display', 'none')
+//                 $('#create_div').css('display', 'none')
+//             }else{               
+//                 $('#create_div').css('display', 'block')
+//             }
+//         });
+
+//     });
+
+// });
+
+
+console.log("js")
 $(document).ready(function() {
 
-    $('#continue').click(function() {
-        const form = new FormData();
-        form.append("action", "login");
-        form.append("email", $('#userid').val());
-        
-        const settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": "API/manager.php",
-          "method": "POST",
-          "headers": {},
-          "processData": false,
-          "contentType": false,
-          "mimeType": "multipart/form-data",
-          "data": form
-        };
-        
-        $.ajax(settings).done(function (response) {
-            console.log(response)
-            if(JSON.parse(response).status){
-                $('#password_div').css('display', 'block').siblings('#continue_div, #login_div').css('display', 'block');
-                $('#continue_div').css('display', 'none')
-                $('#create_div').css('display', 'none')
-            }else{               
-                $('#create_div').css('display', 'block')
-            }
-        });
-
-    });
-
-});
-
-
-$(document).ready(function() {
-
-    $('#login').click(function() {
+    $('#loginbtn').click(function() {
         const form = new FormData();
         form.append("action", "login");
         form.append("email", $('#userid').val());
@@ -44,7 +45,7 @@ $(document).ready(function() {
         const settings = {
           "async": true,
           "crossDomain": true,
-          "url": "API/manager.php",
+          "url": "./API/manager.php",
           "method": "POST",
           "headers": {},
           "processData": false,
@@ -68,25 +69,12 @@ $(document).ready(function() {
 
     });
 
+
 });
   
 $(document).ready(function() {
 
-    $('#create').click(function() {
-        $('#logincard').css('display', 'none')
-        $('#registercard').css('display', 'block')
-    });
-
-    $('#logcard').click(function() {
-        $('#logincard').css('display', 'block')
-        $('#registercard').css('display', 'none')
-    });
-
-  });
-  
-$(document).ready(function() {
-
-    $('#register').click(function() {
+    $('#registerbtn').click(function() {
 
     if($('#regpassword').val()==$('#cnfpassword').val()){
         if($('#terms-conditions').is(':checked')){

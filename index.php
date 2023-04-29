@@ -10,6 +10,8 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <link
       rel="shortcut icon"
