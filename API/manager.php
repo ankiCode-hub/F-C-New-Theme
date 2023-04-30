@@ -11,8 +11,12 @@ include "superadmin/userlist.php";
 //     $choice=null;
 // }
 
-
+$username="";
 // Login Class For All Users
+
+
+
+
 
 class login{
 
@@ -72,30 +76,31 @@ class login{
                     if ($hash == $row['password'] && $row['role'] == 1) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/superadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
+                        $username=$email;
                         exit;
 
                     }else if ($hash == $row['password'] && $row['role'] == 2) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/admin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
                         exit;
                         
                     }else if ($hash == $row['password'] && $row['role'] == 3) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/subadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
                         exit;
                         
                     }else if ($hash == $row['password'] && $row['role'] == 4) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"https://fc-new.netlify.app/"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
                         exit;
                         
                     } else {
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => "No Wrong Password For This UserID"));
+                        echo json_encode(array("status" => true, "message" => "Wrong Password For This UserID"));
                     }
 
                 }else{
@@ -124,50 +129,56 @@ class login{
         
             $email = mysqli_real_escape_string($conn, $_POST['email']);
             $name = mysqli_real_escape_string($conn, $_POST['name']);
+            $image = mysqli_real_escape_string($conn, $_POST['image']);
         
             $query = "SELECT * FROM users WHERE email = '$email'";
             $result = mysqli_query($conn, $query);
             if (mysqli_num_rows($result) == 1) {
-
                     $row = mysqli_fetch_assoc($result);
-
+                    if($row['password']==null){
+                        $_SESSION['email'] = $email;
+                        echo json_encode(array("status" => true, "message" => "new"));
+                        exit;
+                    }
                     if ($row['role'] == 1) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/superadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
                         exit;
 
                     }else if ($row['role'] == 2) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/admin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
                         exit;
                         
                     }else if ($row['role'] == 3) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/subadmin"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
                         exit;
                         
                     }else if ($row['role'] == 4) {
                         $_SESSION['email'] = $email;
                         http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true,"link"=>"https://fc-new.netlify.app/"));
+                        echo json_encode(array("status" => true, "message" => true,"link"=>"../FC/"));
                         exit;
                         
-                    } else {
-                        http_response_code(200);
-                        echo json_encode(array("status" => true, "message" => true));
                     }
 
             } else {
-                echo json_encode(array("status" => false, "message" => "new"));
+                $query = "INSERT INTO users (email,password,profile_image) VALUES ('$email','google','$image')";
+                if (mysqli_query($conn, $query)) {
+                    http_response_code(200);
+                    $_SESSION['email'] = $email;
+                    echo json_encode(array("status" => true, "message" => "new"));
+                }
+                
             }
             mysqli_close($conn);
         }
         
     }
-    
     
 }
 

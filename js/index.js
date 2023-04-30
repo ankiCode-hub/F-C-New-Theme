@@ -32,8 +32,6 @@
 
 // });
 
-
-console.log("js")
 $(document).ready(function() {
 
     $('#loginbtn').click(function() {
@@ -63,7 +61,7 @@ $(document).ready(function() {
                 alert(JSON.parse(response).message)
                 }
             }else{               
-                alert("something went wrong")
+                alert("No userid found pleae register")
             }
         });
 
@@ -120,7 +118,53 @@ $(document).ready(function() {
 
     });
 
-  });
+});
+  
+  
+// $(document).ready(function() {
+
+//     $('#passwordbtn').click(function() {
+
+//         alert("Hii")
+
+//     if($('#regpassword').val()==$('#cnfpassword').val()){
+//             const form = new FormData();
+//             form.append("action", "googlepasswd");
+//             form.append("password", $('#regpassword').val());
+//             const settings = {
+//             "async": true,
+//             "crossDomain": true,
+//             "url": "API/manager.php",
+//             "method": "POST",
+//             "headers": {},
+//             "processData": false,
+//             "contentType": false,
+//             "mimeType": "multipart/form-data",
+//             "data": form
+//             };
+
+//             $.ajax(settings).done(function (response) {
+//                 console.log(response)
+//                 if(JSON.parse(response).status){
+//                     if(JSON.parse(response).message==true){
+//                         alert("Register successful")
+//                         location.reload();
+//                     }
+//                 }else{               
+//                     alert(JSON.parse(response).message)
+//                 }
+//             });
+
+
+//     }else{
+
+//         alert("Password Not Match")
+
+//     }
+
+//     });
+
+// });
   
 
 
@@ -131,6 +175,7 @@ $(document).ready(function() {
     form.append("action", "googlelogin");
     form.append("email", user.email);
     form.append("name", user.name);
+    form.append("image", user.picture);
 
     const settings = {
     "async": true,
@@ -150,12 +195,12 @@ $(document).ready(function() {
             if(JSON.parse(response).message==true){
               location.replace(JSON.parse(response).link)
             }
+            if(JSON.parse(response).message=="new"){
+                location.reload();
+            }
         }else{     
-            
             $('#logincard').css('display', 'none')
             $('#registercard').css('display', 'block')
-
-
             $('#regemail').val(user.email);
             $('#name').val(user.name);
 
@@ -163,3 +208,20 @@ $(document).ready(function() {
     });
 
   }
+
+  
+  
+    $('#logoutbtn').click(function() {
+      $.ajax({
+        url: '../FC/API/logout.php', // replace with your PHP page path
+        success: function(response) {
+          $('#included-content').html(response);
+          location.reload();
+        }
+      });
+    });
+  
+// $(document).ready(function() {
+//     $('#pswd').click(); 
+// })
+

@@ -1,3 +1,9 @@
+<?php
+ob_start();
+require 'API/check.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,6 +36,8 @@
       ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
     ><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -42,7 +50,7 @@
         <!-- Main box -->
         <div class="main-box">
           <div class="logo-box">
-            <div class="logo">
+            <div class="logo" >
               <a href="index.html"
                 ><img
                   src="images/branding/logo.png"
@@ -117,200 +125,64 @@
             </div>
           </div>
 
+
+
           <!--Nav Box-->
           <div class="nav-outer">
-            <nav class="nav main-menu">
-              <!-- <ul class="navigation" id="navbar">
-                <li class="current dropdown">
-                  <span>Home</span>
-                  <ul>
-                    <li class="current">
-                      <a href="index.html">Home Page One</a>
-                    </li>
-                    <li><a href="index-2.html">Home Page Two</a></li>
-                    <li><a href="index-3.html">Home Page Three</a></li>
-                    <li><a href="index-4.html">Home Page Four</a></li>
-                    <li><a href="index-5.html">Home Page Five</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <span>Pages</span>
-                  <ul>
-                    <li class="dropdown">
-                      <span>Dashboard</span>
-                      <ul>
-                        <li class="active">
-                          <a href="dashboard.html"> Dashboard</a>
-                        </li>
-                        <li><a href="dashboard-profile.html">Profile</a></li>
-                        <li><a href="dashboard-listing.html">Listings</a></li>
-                        <li><a href="dashboard-messages.html">Messages </a></li>
-                        <li><a href="dashboard-reviews.html">Reviews</a></li>
-                        <li>
-                          <a href="dashboard-favorites.html">Favorites</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="how-it-works.html">How It Works</a></li>
-                    <li><a href="pricing-table.html">Pricing Table</a></li>
-                    <li><a href="listing-style.html">Listing Style</a></li>
-                    <li>
-                      <a href="terms-and-condition.html">Terms and Condition</a>
-                    </li>
-                    <li><a href="elements.html">UI Elements</a></li>
-                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                    <li><a href="error-page.html">Error 404</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <span>Listings</span>
-                  <ul>
-                    <li class="dropdown">
-                      <span>Listing Layout</span>
-                      <ul>
-                        <li><a href="listing-layout-1.html">Layout 01</a></li>
-                        <li><a href="listing-layout-2.html">Layout 02</a></li>
-                        <li><a href="listing-layout-3.html">Layout 03</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <span>Listing With Map</span>
-                      <ul>
-                        <li>
-                          <a href="listing-map-layout-1.html">Map Layout 01</a>
-                        </li>
-                        <li>
-                          <a href="listing-map-layout-2.html">Map Layout 02</a>
-                        </li>
-                        <li>
-                          <a href="listing-map-layout-3.html">Map Layout 03</a>
-                        </li>
-                        <li>
-                          <a href="listing-map-layout-4.html">Map Layout 04</a>
-                        </li>
-                        <li>
-                          <a href="listing-map-layout-5.html">Map Layout 05</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <span>Listing Single</span>
-                      <ul>
-                        <li>
-                          <a href="listing-single.html">Listing Single 01</a>
-                        </li>
-                        <li>
-                          <a href="listing-single-2.html">Listing Single 02</a>
-                        </li>
-                        <li>
-                          <a href="listing-single-3.html">Listing Single 03</a>
-                        </li>
-                        <li>
-                          <a href="listing-single-4.html">Listing Single 04</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <span>Shop</span>
-                  <ul>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="shop-single.html">Shop Single</a></li>
-                    <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <span>Blog</span>
-                  <ul>
-                    <li><a href="blog.html">Blog Grid</a></li>
-                    <li><a href="blog-single.html">Blog Single</a></li>
-                  </ul>
-                </li>
 
-                <li><a href="contact.html">Contact</a></li>
-                <li class="mm-add-listing">
-                  <a href="add-listing.html" class="theme-btn btn-style-three"
-                    ><span class="flaticon-plus-symbol"></span>Add Listing</a
-                  >
-                </li>
-              </ul> -->
-            </nav>
             <!-- Main Menu End-->
 
             <div class="outer-box">
               <!-- Add Listing -->
-              <a href="add-listing.html" class="add-listing">
-                <span class="flaticon-plus-symbol"></span> Add Listing</a
-              >
+                <a href="add-listing.html" class="add-listing">
+                <span class="flaticon-plus-symbol"></span> Add Listing</a>
 
-              <!-- Cart btn -->
-              <!-- <div class="cart-btn">
-                <a href="shopping-cart.html"
-                  ><i class="icon flaticon-shopping-bag"></i>
-                  <span class="count">2</span></a
-                >
 
-                <div class="shopping-cart">
-                  <ul class="shopping-cart-items">
-                    <li class="cart-item">
+              <?php
+                if(isset($_SESSION['email'])){
+                  echo '
+                  <nav class="nav main-menu">
+                  <ul class="navigation" id="navbar">
+  
+                    <li class="dropdown">
                       <img
-                        src="images/resource/item-thumb-1.jpg"
+                        src="'.$ProfileImage.'"
                         alt=""
-                        class="thumb"
-                      />
-                      <span class="item-name">Dolar Sit Amet</span>
-                      <span class="item-quantity"
-                        >1 x <span class="item-amount">$7.90</span></span
-                      >
-                      <a href="shop-single.html" class="product-detail"></a>
-                      <button class="remove-item">
-                        <span class="fa fa-times"></span>
-                      </button>
+                        class="thumb rounded-full h-12 w-12"
+                        />
+                      <ul class="mr-12">
+                        <li><a href="blog.html">Dashboard</a></li>
+                        <li><a id="logoutbtn">Logout</a></li>
+                      </ul>
                     </li>
-
-                    <li class="cart-item">
-                      <img
-                        src="images/resource/item-thumb-2.jpg"
-                        alt=""
-                        class="thumb"
-                      />
-                      <span class="item-name">Lorem Ipsum</span>
-                      <span class="item-quantity"
-                        >3 x <span class="item-amount">$7.90</span></span
+  
+                    <!-- <li><a href="contact.html">Contact</a></li> -->
+                    <li class="mm-add-listing">
+                      <a href="add-listing.html" class="theme-btn btn-style-three"
+                        ><span class="flaticon-plus-symbol"></span>Add Listing</a
                       >
-                      <a href="shop-single.html" class="product-detail"></a>
-                      <button class="remove-item">
-                        <span class="fa fa-times"></span>
-                      </button>
                     </li>
                   </ul>
+                </nav>';
+                }
+              ?>
+             
 
-                  <div class="shopping-cart-total">
-                    <span>Subtotal: </span> $57.70
-                  </div>
-
-                  <div class="cart-footer">
-                    <a href="cart.html" class="theme-btn btn-style-one"
-                      >View Cart</a
-                    >
-                    <a href="checkout.html" class="theme-btn btn-style-two"
-                      >Checkout</a
-                    >
-                  </div>
-                </div> -->
-                <!--end shopping-cart -->
-              </div>
+              <?php
+                if(!isset($_SESSION['email'])){
+                  echo '
+                    <div class="login-box">
+                      <span class="flaticon-user"></span>
+                      <a href="login.html" class="call-modal">Login</a> or
+                      <a href="register.html" class="call-modal">Register </a>
+                    </div>';
+                }
+              ?>
 
               <!-- Login/Register -->
-              <div class="login-box">
-                <span class="flaticon-user"></span>
-                <a href="login.html" class="call-modal">Login</a> or
-                <a href="register.html" class="call-modal">Register </a>
-              </div>
+
             </div>
+
           </div>
         </div>
 
@@ -1506,6 +1378,7 @@
     </div>
     <!-- End Page Wrapper -->
 
+    <script src="js/index.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/chosen.min.js"></script>
