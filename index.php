@@ -1,6 +1,26 @@
 <?php
 ob_start();
-require 'API/check.php';
+include "API/database.php";
+
+session_start();
+$name="";
+$ProfileImage="";
+
+if (!isset($_SESSION['email'])) {
+    // header('Location: index.php');
+}else{
+    $email=$_SESSION['email'];
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+            $name=$row['name'];
+            $ProfileImage=$row['profile_image'];
+            if($row['password']==null){
+            }
+    }
+}
+
 ?>
 
 
@@ -151,7 +171,7 @@ require 'API/check.php';
                         class="thumb rounded-full h-12 w-12"
                         />
                       <ul class="mr-12">
-                        <li><a href="blog.html">Dashboard</a></li>
+                        <li><a href="dashboard">Dashboard</a></li>
                         <li><a id="logoutbtn">Logout</a></li>
                       </ul>
                     </li>

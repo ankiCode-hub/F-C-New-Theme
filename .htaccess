@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteRule ^admin/dashboard$ /FC/admin/index.php [NC,L]
-RewriteRule ^subadmin/dashboard$ /FC/subadmin/index.php [NC,L]
-RewriteRule ^superadmin/dashboard$ /FC/superadmin/index.php [NC,L]
-RewriteRule ^FC/?$ FC/login.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+RewriteRule ^dashboard$ dashboard.php [L,R=301]

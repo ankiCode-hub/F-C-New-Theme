@@ -8,7 +8,7 @@
                 <input type="text" name="name" id="name" placeholder="Full Name" required="">
             </div>
             <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="Email" required="">
+                <input type="email" name="email" id="regemail" placeholder="Email" required="">
             </div>
             <div class="form-group">
                 <input type="password" name="regpassword" id="regpassword" placeholder="Password" required="">
@@ -22,7 +22,7 @@
                     <label for="agree-policy">I agree to the <a href="#">Privacy Policy</a></label>
                 </div>
                 <div class="checkbox-wrap">
-                    <input type='checkbox' name='remember-me' value='remember-me' id="agree-terms" />
+                    <input type='checkbox' name='remember-me' value='remember-me' id="terms-conditions"  />
                     <label for="agree-terms">I agree to the <a href="#">Terms and Conditions</a></label>
                 </div>
             </div>
@@ -32,13 +32,31 @@
             <div class="form-group">
                 <span class="text">Or connect with</span>
             </div>
-            <div class="form-group">
-                <a href="#" class="social-btn facebook-btn"><span class="fab fa-facebook-f"></span> Facebook</a>
-                <a href="#" class="social-btn google-btn"><span class="fab fa-google"></span> Google</a>
-            </div>
+            <center>
+                <div>
+                    <script src="https://accounts.google.com/gsi/client" async defer></script>
+                    <div id="g_id_onload"
+                        data-client_id="69080923123-jffkrro2is76o0pili7r5ac2m6g6k6ql.apps.googleusercontent.com"
+                        data-context="signup"
+                        data-ux_mode="popup"
+                        data-callback="display"
+                        data-auto_prompt="false">
+                    </div>
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-shape="pill"
+                        data-theme="filled_blue"
+                        data-text="continue_with"
+                        data-size="large"
+                        data-logo_alignment="left"
+                        data-width="200">
+                    </div>
+                  
+                </div></center>
         </div>
     </div>
     <!-- End Login Module -->
+    <script src="js/index.js"></script>
 
 </div>
     
