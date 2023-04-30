@@ -5,6 +5,11 @@ include "database.php";
 session_start();
 $name="";
 $ProfileImage="";
+$email="";
+$phone="";
+$twitter="";
+$facebook="";
+$instagram="";
 
 
 
@@ -21,10 +26,17 @@ if (!isset($_SESSION['email'])) {
         $row = mysqli_fetch_assoc($result);
             $name=$row['name'];
             $ProfileImage=$row['profile_image'];
+            $email=$row['email'];
+            $phone=$row['phone'];
+            $twitter=$row['twitter'];
+            $facebook=$row['facebook'];
+            $instagram=$row['instagram'];
             if($row['password']==null){
                 
             }
     }
+
+
 
 
     function getuser_role($email,$conn){

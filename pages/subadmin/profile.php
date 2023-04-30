@@ -25,7 +25,10 @@ include "header.php";
             <ul class="navigation">
                 <li><a href="dashboard"> <i class="la la-home"></i> Dashboard</a></li>
                 <li class="active"><a href="profile"><i class="la la-user"></i>Profile</a></li>
+                <li><a href="profile"><i class="la la-user"></i>Sub Admins</a></li>
+                <li><a href="listing"><i class="la la-layer-group"></i>Listings</a></li>
                 <li><a href="messages"><i class="la la-envelope"></i> Messages </a></li>
+                <li><a href="reviews"><i class="la la-calendar"></i> Reviews</a></li>
                 <li><a href="favorites"><i class="la la-thumbs-o-up"></i>Favorites</a></li>
                 <li><a href="index"><i class="la la-sign-out"></i>Logout</a></li>
             </ul>
@@ -54,16 +57,24 @@ include "header.php";
                                 <!--Comment Form-->
                                 <form>
                                     <div class="form-group">
-                                        <label>Full Name</label>
-                                        <input type="text" name="fname" placeholder="" required value="<?php echo $name;?>">
+                                        <label>First Name</label>
+                                        <input type="text" name="fname" placeholder="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" name="lname" placeholder="" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="text" name="phone" placeholder="" required value="<?php echo $phone;?>">
+                                        <input type="text" name="phone" placeholder="" required>
                                     </div>
                                     <div class="form-group">
                                         <label>E-mail</label>
-                                        <input type="email" name="email" placeholder="" required value="<?php echo $email;?>">
+                                        <input type="email" name="email" placeholder="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Website</label>
+                                        <input type="text" name="website" placeholder="" required>
                                     </div>
                                     <div class="form-group">
                                         <button class="theme-btn btn-style-two" type="submit" name="submit-form">Save Changes</button>
@@ -82,6 +93,10 @@ include "header.php";
                             <div class="default-form">
                                 <!--Comment Form-->
                                 <form>
+                                    <div class="form-group">
+                                        <label>Current Password</label>
+                                        <input type="password" name="fname" placeholder="" required>
+                                    </div>
                                    <div class="form-group">
                                         <label>New Password</label>
                                         <input type="password" name="fname" placeholder="" required>
@@ -111,21 +126,29 @@ include "header.php";
                                 <form>
                                     <div class="form-group">
                                         <label>Twitter</label>
-                                        <input type="text" name="fname" placeholder="" required value="<?php echo $twitter;?>">
+                                        <input type="text" name="fname" placeholder="" required>
                                         <span class="icon fab fa-twitter"></span>
                                     </div>
                                     <div class="form-group">
                                         <label>Facebook</label>
-                                        <input type="text" name="fname" placeholder="" required value="<?php echo $facebook;?>">
+                                        <input type="text" name="fname" placeholder="" required>
                                         <span class="icon fab fa-facebook"></span>
                                     </div>
-                                    
+                                    <div class="form-group">
+                                        <label>Linkedin</label>
+                                        <input type="text" name="fname" placeholder="" required>
+                                        <span class="icon fab fa-linkedin-in"></span>
+                                    </div>
                                     <div class="form-group">
                                         <label>Instagram</label>
-                                        <input type="text" name="fname" placeholder="" required value="<?php echo $instagram;?>">
+                                        <input type="text" name="fname" placeholder="" required>
                                         <span class="icon fab fa-instagram"></span>
                                     </div>
-                                
+                                    <div class="form-group">
+                                        <label>Dribbble</label>
+                                        <input type="text" name="fname" placeholder="" required>
+                                        <span class="icon fab fa-dribbble"></span>
+                                    </div>  
                                     <div class="form-group">
                                         <button class="theme-btn btn-style-two" type="submit" name="submit-form">Save Changes</button>
                                     </div> 

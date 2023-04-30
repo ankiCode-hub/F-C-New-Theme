@@ -27,6 +27,7 @@ class login{
             $email = mysqli_real_escape_string($conn, $_POST['email']);
             $hash = hash('sha256', mysqli_real_escape_string($conn, $_POST['password']));
             $role = mysqli_real_escape_string($conn, $_POST['role']);
+            $name = mysqli_real_escape_string($conn, $_POST['name']);
         
             
         
@@ -36,7 +37,7 @@ class login{
                 echo json_encode(array("status" => false, "message" => "Email Already Exists"));
                 exit;
             } else {
-                $query = "INSERT INTO users (email, password,role) VALUES ('$email', '$hash',$role)";
+                $query = "INSERT INTO users (email,name, password,role) VALUES ('$email','$name', '$hash',$role)";
                 if (mysqli_query($conn, $query)) {
                     http_response_code(201);
                     echo json_encode(array("status" => true, "message" => true));
@@ -167,7 +168,7 @@ class login{
                     }
 
             } else {
-                $query = "INSERT INTO users (email,password,profile_image) VALUES ('$email','google','$image')";
+                $query = "INSERT INTO users (email,name,password,profile_image) VALUES ('$email','$name','google','$image')";
                 if (mysqli_query($conn, $query)) {
                     http_response_code(200);
                     $_SESSION['email'] = $email;

@@ -24,10 +24,18 @@ include "header.php";
             </div>
 
             <ul class="navigation">
+                <!-- <li class="active"><a href="dashboard"> <i class="la la-home"></i> Dashboard</a></li> -->
                 <li class="active"><a href="dashboard"> <i class="la la-home"></i> Dashboard</a></li>
                 <li><a href="profile"><i class="la la-user"></i>Profile</a></li>
-                <li><a href="messages"><i class="la la-envelope"></i> Messages </a></li>
-                <li><a href="favorites"><i class="la la-thumbs-o-up"></i>Favorites</a></li>
+                <li><a href="listing"><i class="la la-envelope"></i> Listing </a></li>
+                <li><a href="user"><i class="la la-thumbs-o-up"></i>User</a></li>
+                <li><a href="Catecories"><i class="la la-thumbs-o-up"></i>Catecories</a></li>
+                <li><a href="Country"><i class="la la-thumbs-o-up"></i>Country</a></li>
+                <li><a href="Ribbon"><i class="la la-thumbs-o-up"></i>Ribbon Tags</a></li>
+                <li><a href="BlogCategory"><i class="la la-thumbs-o-up"></i>Blog Categories</a></li>
+                <li><a href="Blog"><i class="la la-thumbs-o-up"></i>Blog</a></li>
+                <li><a href="Plans"><i class="la la-thumbs-o-up"></i>Plans</a></li>
+                <li><a href="Payments"><i class="la la-thumbs-o-up"></i>Payments</a></li>
                 <li><a href="index"><i class="la la-sign-out"></i>Logout</a></li>
             </ul>
         </div>

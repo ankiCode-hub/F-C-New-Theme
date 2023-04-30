@@ -1,7 +1,7 @@
 <?php 
 
 if(!defined('included')){
-    header('Location: /FC/error-page.html');
+    header('Location: /FC/error-page');
     exit;
 }
 include "header.php";
@@ -26,7 +26,10 @@ include "header.php";
             <ul class="navigation">
                 <li class="active"><a href="dashboard"> <i class="la la-home"></i> Dashboard</a></li>
                 <li><a href="profile"><i class="la la-user"></i>Profile</a></li>
+                <li><a href="profile"><i class="la la-user"></i>Sub Admins</a></li>
+                <li><a href="listing"><i class="la la-layer-group"></i>Listings</a></li>
                 <li><a href="messages"><i class="la la-envelope"></i> Messages </a></li>
+                <li><a href="reviews"><i class="la la-calendar"></i> Reviews</a></li>
                 <li><a href="favorites"><i class="la la-thumbs-o-up"></i>Favorites</a></li>
                 <li><a href="index"><i class="la la-sign-out"></i>Logout</a></li>
             </ul>

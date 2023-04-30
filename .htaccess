@@ -1,4 +1,9 @@
 RewriteEngine On
+
+# Block direct access to the dashboard.php file in the pages/user directory
+RewriteCond %{REQUEST_URI} ^/pages/user/dashboard\.php$
+RewriteRule ^ - [F]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [L]
