@@ -75,102 +75,51 @@ include "header.php";
             <!-- My Listings -->
             <div class="my-listing-widget ls-widget" id="features">
                 <div class="widget-title"><h4><span class="icon flaticon-list"></span> My Listings</h4></div>
-                <div class="widget-content">
+                <div class="widget-content" id="app">
                     <!-- Listing Block Seven -->
-                    <div class="listing-block-seven">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="images/resource/listing/1-1.jpg" alt=""></figure>
-                            </div>
 
-                            <div class="content-box">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="title">(7 review)</span>
+                    <div >
+                        <!-- <table> -->
+                            <!-- <tr >
+                            <td></td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone }}</td>
+                            </tr> -->
+                        <!-- </table> -->
+
+                        <div class="listing-block-seven" v-for="user in users" :key="user.id">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><img :src="user.profile_image" alt=""></figure>
                                 </div>
-                                <h3><a href="#">Private Hotel-Spa <span class="icon icon-verified"></span></a></h3>
-                                <div class="text">Luxury hotel in the heart of Bloomsbury.</div>
-                                <ul class="info">
-                                    <li><div class="place"><span class="icon flaticon-bed"></span> Hotels </div></li>
-                                    <li><span class="flaticon-pin"></span> Santa Monica, CA</li>
-                                    <li><span class="flaticon-phone-call"></span> +61 2 8236 9200 </li>
-                                </ul>
-                            </div>
 
-                            <div class="btn-box">
-                                <button class="theme-btn btn-style-one small bg-gray"><span class="icon flaticon-edit"></span>Edit</button>
-                                <button class="theme-btn btn-style-one small bg-purple"><span class="icon flaticon-delete-button"></span>Delete</button>
+                                <div class="content-box">
+                                    <div class="rating">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="title">{{ user.review_count }}</span>
+                                    </div>
+                                    <h3><a href="#">{{ user.name }} <span class="icon icon-verified"></span></a></h3>
+                                    <div class="text">{{ user.overview }}</div>
+                                    <ul class="info">
+                                        <li><div class="place"><span class="icon flaticon-bed"></span> Hotels </div></li>
+                                        <li><span class="flaticon-pin"></span> {{ user.city }} , {{user.state}}</li>
+                                        <li><span class="flaticon-phone-call"></span> {{user.phone}} </li>
+                                    </ul>
+                                </div>
+
+                                <div class="btn-box">
+                                    <button class="theme-btn btn-style-one small bg-gray"><span class="icon flaticon-edit"></span>Edit</button>
+                                    <button class="theme-btn btn-style-one small bg-purple"><span class="icon flaticon-delete-button"></span>Delete</button>
+                                </div>
                             </div>
                         </div>
+                    
+                
                     </div>
-                    <!-- Listing Block Seven -->
-                    <div class="listing-block-seven">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="images/resource/listing/1-2.jpg" alt=""></figure>
-                            </div>
-
-                            <div class="content-box">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="title">(7 review)</span>
-                                </div>
-                                <h3><a href="#">Moonlight Restourant <span class="icon icon-verified"></span></a></h3>
-                                <div class="text">Luxury hotel in the heart of Bloomsbury.</div>
-                                <ul class="info">
-                                    <li><div class="place pink"><span class="icon flaticon-hotel-1"></span> Restourant </div></li>
-                                    <li><span class="flaticon-pin"></span> Santa Monica, CA</li>
-                                    <li><span class="flaticon-phone-call"></span> +61 2 8236 9200 </li>
-                                </ul>
-                            </div>
-
-                            <div class="btn-box">
-                                <button class="theme-btn btn-style-one small bg-gray"><span class="icon flaticon-edit"></span>Edit</button>
-                                <button class="theme-btn btn-style-one small bg-purple"><span class="icon flaticon-delete-button"></span>Delete</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Listing Block Seven -->
-                    <div class="listing-block-seven">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="images/resource/listing/1-3.jpg" alt=""></figure>
-                            </div>
-
-                            <div class="content-box">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="title">(7 review)</span>
-                                </div>
-                                <h3><a href="#">Best Museum <span class="icon icon-verified"></span></a></h3>
-                                <div class="text">Luxury hotel in the heart of Bloomsbury.</div>
-                                <ul class="info">
-                                    <li><div class="place purple"><span class="icon flaticon-museum"></span> Art & History</div></li>
-                                    <li><span class="flaticon-pin"></span> Santa Monica, CA</li>
-                                    <li><span class="flaticon-phone-call"></span> +61 2 8236 9200 </li>
-                                </ul>
-                            </div>
-
-                            <div class="btn-box">
-                                <button class="theme-btn btn-style-one small bg-gray"><span class="icon flaticon-edit"></span>Edit</button>
-                                <button class="theme-btn btn-style-one small bg-purple"><span class="icon flaticon-delete-button"></span>Delete</button>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -179,7 +128,7 @@ include "header.php";
 
 </div><!-- End Page Wrapper -->
 
-
+<script src="pages/superadmin/js/listing.js"></script> 
 <script src="js/jquery.js"></script> 
 <script src="js/popper.min.js"></script>
 <script src="js/chosen.min.js"></script>

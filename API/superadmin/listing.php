@@ -57,7 +57,8 @@ class SuperAdminListing{
                     $listings[] = $row;
                 }
                 http_response_code(200);
-                echo json_encode($listings);
+                $response = array('data' => $listings);
+                echo json_encode(array("message" => true,"status"=>true,"data"=>$listings));
             } else {
                 http_response_code(404);
                 echo json_encode(array("message" => "empty"));
