@@ -1,19 +1,12 @@
-// Get all buttons
 const buttons = $('.cardbtn');
 
-// Get all cards
 const cards = $('.cards');
 
-// Loop through all buttons
 buttons.each(function() {
-  // Add click event listener
   $(this).on('click', function() {
-    // Get the target card ID from the data-card attribute
     const targetCardId = $(this).data('card');
 
-    // Loop through all cards
     cards.each(function() {
-      // If the card ID matches the target card ID, show it with a fade-in effect, otherwise hide it with a fade-out effect
       if ($(this).attr('id') === targetCardId) {
         $(this).fadeIn(150);
       } else {
@@ -67,3 +60,18 @@ function showNextCard() {
 }
 
 $('#next-btn').on('click', showNextCard);
+
+
+function previewImage(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+          $('.uploadButton-file-name').html('<img src="'+e.target.result+'" style="max-width: 100%;"/>');
+      };
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$('#upload').change(function() {
+  previewImage(this);
+});
