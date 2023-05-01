@@ -38,17 +38,13 @@ class SuperAdminListing{
     function listings_display($conn) {
 
         if($_REQUEST['type']==0){
-
             $query = "SELECT * FROM listings";
-        
-        }else if($_REQUEST['type']==1){
-            
+        }else if($_REQUEST['type']=="1"){
             $query = "SELECT * FROM listings where is_approved=1";
-        
-        }else{
-            
+        }else if($_REQUEST['type']==2){
             $query = "SELECT * FROM listings where is_approved=2";
-            
+        }else if($_REQUEST['type']=="asc"){
+          $query = "SELECT * FROM listings short by name asc";
         }
         $result = mysqli_query($conn, $query);
             if(mysqli_num_rows($result) > 0) {
@@ -60,8 +56,8 @@ class SuperAdminListing{
                 $response = array('data' => $listings);
                 echo json_encode(array("message" => true,"status"=>true,"data"=>$listings));
             } else {
-                http_response_code(404);
-                echo json_encode(array("message" => "empty"));
+                http_response_code(200);
+                echo json_encode(array("message" => "empty","status"=>false));
             }
 
     }
@@ -86,7 +82,7 @@ class SuperAdminListing{
     }
 
 
-    function user_update($conn) {
+    function listing_update($conn) {
         $variables = array('user_id', 'name', 'category_id', 'tags', 'ribbon_tag_id', 'profile_image', 'overview', 'video', 'address', 'state', 'city', 'country', 'pincode', 'phone', 'email', 'license_number', 'website', 'map', 'status', 'step', 'review_count', 'created_by', 'is_approved', 'created_at', 'updated_at', 'deleted_at');
         $set_values = array();
         $id = mysqli_real_escape_string($conn, $_REQUEST['id']);

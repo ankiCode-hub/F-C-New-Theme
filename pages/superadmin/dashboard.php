@@ -4,9 +4,32 @@ if(!defined('included')){
     header('Location: /FC/error-page.html');
     exit;
 }
+
+
+$sql = "SELECT COUNT(*) AS count FROM users";
+$result = $conn->query($sql);
+$usercount;
+if ($result) {
+    $row = $result->fetch_assoc();
+    $usercount = $row['count'];
+} else {
+    $usercount=0;
+}
+
+$sql = "SELECT COUNT(*) AS count FROM listings";
+$result = $conn->query($sql);
+$listingcount;
+if ($result) {
+    $row = $result->fetch_assoc();
+    $listingcount = $row['count'];
+} else {
+    $listingcount=0;
+}
+
+$conn->close();
+
+
 include "header.php";
-
-
 ?>
 
     <!-- Sidebar Backdrop -->
@@ -49,8 +72,8 @@ include "header.php";
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="ui-item">
                         <div class="left">
-                            <h4>19</h4>
-                            <p>Published Listings</p>
+                            <h4><?php echo $usercount;?></h4>
+                            <p>Total Users</p>
                         </div>
                         <div class="right">
                             <i class="icon flaticon-computer"></i>
@@ -60,8 +83,8 @@ include "header.php";
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="ui-item bg-purple">
                         <div class="left">
-                            <h4>15</h4>
-                            <p>Pending Listings</p>
+                            <h4><?php echo $listingcount;?></h4>
+                            <p>Total Listings</p>
                         </div>
                         <div class="right">
                             <i class="icon flaticon-school-material"></i>

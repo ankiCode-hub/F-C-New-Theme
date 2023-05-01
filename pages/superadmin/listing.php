@@ -73,52 +73,13 @@ include "header.php";
             </div>
 
             <!-- My Listings -->
+
             <div class="my-listing-widget ls-widget" id="features">
                 <div class="widget-title"><h4><span class="icon flaticon-list"></span> My Listings</h4></div>
                 <div class="widget-content" id="app">
                     <!-- Listing Block Seven -->
 
-                    <div >
-                        <!-- <table> -->
-                            <!-- <tr >
-                            <td></td>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.phone }}</td>
-                            </tr> -->
-                        <!-- </table> -->
-
-                        <div class="listing-block-seven" v-for="user in users" :key="user.id">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img :src="user.profile_image" alt=""></figure>
-                                </div>
-
-                                <div class="content-box">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="title">{{ user.review_count }}</span>
-                                    </div>
-                                    <h3><a href="#">{{ user.name }} <span class="icon icon-verified"></span></a></h3>
-                                    <div class="text">{{ user.overview }}</div>
-                                    <ul class="info">
-                                        <li><div class="place"><span class="icon flaticon-bed"></span> Hotels </div></li>
-                                        <li><span class="flaticon-pin"></span> {{ user.city }} , {{user.state}}</li>
-                                        <li><span class="flaticon-phone-call"></span> {{user.phone}} </li>
-                                    </ul>
-                                </div>
-
-                                <div class="btn-box">
-                                    <button class="theme-btn btn-style-one small bg-gray"><span class="icon flaticon-edit"></span>Edit</button>
-                                    <button class="theme-btn btn-style-one small bg-purple"><span class="icon flaticon-delete-button"></span>Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                
+                    <div id="listing_div">
                     </div>
                 </div>
             </div>
